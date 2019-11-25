@@ -1,0 +1,36 @@
+{
+  "name": "ip-utility",
+  "version": "1.0.1",
+  "description": "Package that provides a basic set of function about your IP",
+  "main": "dist/index.js",
+  "repository": "https://github.com/ArcaneDiver/ip-utility.git",
+  "author": {
+    "name": "Michele Della Mea",
+    "email": "michele.dellamea@bearzi.org",
+    "url": "https://github.com/ArcaneDiver"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "npx tsc -p tsconfig.json",
+    "dev": "npx nodemon src/index.ts",
+    "cli:dev": "npx nodemon src/cli.ts",
+    "start": "npx ts-node dist/index.js",
+    "test": "npx cross-env mocha -r ts-node/register src/**/**.test.js"
+  },
+  "bin": "./dist/cli.js",
+  "devDependencies": {
+    "@types/chai": "^4.2.5",
+    "@types/meow": "^5.0.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.12",
+    "chai": "^4.2.0",
+    "npx": "^10.2.0",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chalk": "^3.0.0",
+    "meow": "^5.0.0"
+  }
+}
