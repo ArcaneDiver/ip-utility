@@ -1,6 +1,6 @@
 {
   "name": "ip-utility",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Package that provides a basic set of function about your IP",
   "main": "dist/index.js",
   "repository": "https://github.com/ArcaneDiver/ip-utility.git",
@@ -34,5 +34,5 @@
     "ts-node": "^8.5.2",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
-  }  
+  }
 }
