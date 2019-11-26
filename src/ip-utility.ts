@@ -35,7 +35,7 @@ export function getPrivate(options: IPrivateOptions): ILocalWebInterfaces {
                 const wifiInterfacesName: string[] = subStringInArrOfStr(iKeys, "Wi-Fi");
 
                 if (wifiInterfacesName.length > 0) {
-                        res.wifi = wifiInterfacesName.map<IWebInterface> ((interfaceName: string): IWebInterface  => {
+                        res.wifi = wifiInterfacesName.map<IWebInterface>((interfaceName: string): IWebInterface => {
                                 const interfaceData: IWebInterface = {};
 
                                 interfaces[interfaceName].map((i: NetworkInterfaceInfo): void => {
