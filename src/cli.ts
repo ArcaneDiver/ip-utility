@@ -3,9 +3,9 @@
 import chalk from "chalk";
 import meow from "meow";
 
-import { getPublic, getPrivate } from "./ip-utility";
+import { getPrivate, getPublic } from "./ip-utility";
 
-( async function () {
+( async () => {
         const cli = meow(
         `
         Options
@@ -17,11 +17,12 @@ import { getPublic, getPrivate } from "./ip-utility";
                                 public: {
                                         type: "boolean",
                                 },
+                                // tslint:disable-next-line: object-literal-sort-keys
                                 private: {
                                         type: "boolean",
-                                }
-                        }
-                }
+                                },
+                        },
+                },
         );
 
         if (cli.flags.public && cli.flags.private) {
@@ -30,8 +31,11 @@ import { getPublic, getPrivate } from "./ip-utility";
         } else if (cli.flags.public) {
                 console.log(chalk.yellow("Public IP:"), chalk.bold(await getPublic()));
         } else if (cli.flags.private) {
-                console.log(chalk.green("Private IP:"), chalk.bold(getPrivate()));
+                console.log(chalk.green("Private IP:"), chalk.bold(getPrivate({
+                        ethernet: true,
+                        wifi: true,
+                })));
         } else {
                 console.log(cli.help);
         }
-})()
+})();
