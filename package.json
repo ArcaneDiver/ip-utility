@@ -1,6 +1,6 @@
 {
 	"name": "ip-utility",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Package that provides a basic set of function about your IP",
 	"main": "dist/index.js",
 	"repository": "https://github.com/ArcaneDiver/ip-utility.git",
