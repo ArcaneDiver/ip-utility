@@ -17,6 +17,7 @@ jobs:
   publish-gpr:
     name: Publish GitHub Packages
     runs-on: ubuntu-latest
+    needs: [publish-npm]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
