@@ -9,6 +9,9 @@
 		"email": "michele.dellamea@bearzi.org",
 		"url": "https://github.com/ArcaneDiver"
 	},
+	"publishConfig": {
+		"registry":"https://npm.pkg.github.com/@ArcaneDiver"
+	},
 	"engines": {
 		"node": ">=8"
 	},
