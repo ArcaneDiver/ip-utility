@@ -1,7 +1,7 @@
 # IP UTILITY
 
 
-[![NPM version][npm-image]][npm-url]
+[![npm version](https://badge.fury.io/js/ip-utility.svg)](https://badge.fury.io/js/ip-utility)
 ## Installation
 
 You can install with npm:
