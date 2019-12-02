@@ -1,8 +1,9 @@
 {
 	"name": "ip-utility",
-	"version": "1.0.8",
+	"version": "1.1.0",
 	"description": "Package that provides a basic set of function about your IP",
 	"main": "dist/index.js",
+	"types": "dist/**/*.d.ts",
 	"repository": "https://github.com/ArcaneDiver/ip-utility.git",
 	"author": {
 		"name": "Michele Della Mea",
@@ -10,7 +11,7 @@
 		"url": "https://github.com/ArcaneDiver"
 	},
 	"publishConfig": {
-		"registry":"https://npm.pkg.github.com/@ArcaneDiver"
+		"registry": "https://npm.pkg.github.com/@ArcaneDiver"
 	},
 	"engines": {
 		"node": ">=8"
@@ -20,23 +21,48 @@
 		"dev": "npx nodemon src/index.ts",
 		"cli:dev": "npx nodemon src/cli.ts",
 		"start": "npx ts-node dist/index.js",
-		"test": "npx mocha --require ts-node/register src/test/**/*.spec.ts",
+		"test": "npx mocha",
+		"coverage": "npx nyc mocha",
 		"lint": "npx tslint --config tslint.json --project tsconfig.json"
+	},
+	"nyc": {
+		"extends": "@istanbuljs/nyc-config-typescript",
+		"produceSourceMap": true,
+		"sourceMap": true,
+		"instrument": true,
+		"all": true,
+		"require": [
+			"source-map-support/register",
+			"ts-node/register"
+		],
+		"reporter": [
+			"text",
+			"lcov"
+		],
+		"include": [
+			"**/*.ts"
+		]
 	},
 	"bin": "./dist/cli.js",
 	"license": "MIT",
 	"dependencies": {
+		"@types/default-gateway": "^3.0.0",
 		"axios": "^0.19.0",
 		"chalk": "^3.0.0",
+		"default-gateway": "^5.0.5",
 		"meow": "^5.0.0"
 	},
 	"devDependencies": {
+		"@istanbuljs/nyc-config-typescript": "^0.1.3",
 		"@types/chai": "^4.2.5",
 		"@types/meow": "^5.0.0",
 		"@types/mocha": "^5.2.7",
 		"@types/node": "^12.12.12",
 		"chai": "^4.2.0",
+		"mocha": "^6.2.2",
 		"npx": "^10.2.0",
+		"nyc": "^14.1.1",
+		"source-map-support": "^0.5.16",
 		"ts-node": "^8.5.2",
 		"tslint": "^5.20.1",
 		"typescript": "^3.7.2"

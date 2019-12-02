@@ -31,10 +31,8 @@ import { getPrivate, getPublic } from "./ip-utility";
         } else if (cli.flags.public) {
                 console.log(chalk.yellow("Public IP:"), chalk.bold(await getPublic()));
         } else if (cli.flags.private) {
-                console.log(chalk.green("Private IP:"), chalk.bold(getPrivate({
-                        ethernet: true,
-                        wifi: true,
-                })));
+                // tslint:disable-next-line: max-line-length
+                console.log(chalk.green("Private IP:"), chalk.bold(getPrivate().actual.ip.v4));
         } else {
                 console.log(cli.help);
         }
