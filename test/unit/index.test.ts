@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import { Done } from "mocha";
+import os from "os";
 
 import axios from "axios";
 
@@ -9,6 +10,7 @@ import { getPrivate, getPublic } from "../../src/ip-utility";
 
 describe("Test public ip", (): void => {
         it("AJAX work correctly", (done: Done): void => {
+                console.log(os.networkInterfaces());
                 getPublic()
                         .then((ip: string) => {
                                 expect(ip).to.be.a("string");
